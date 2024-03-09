@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './NewCollections.css'
 import new_collections from '../Assets/new_collections'
 import Item from '../Item/Item'
@@ -20,6 +20,10 @@ import Item from '../Item/Item'
     const handleNextPage = () => {
         setCurrentPage(currentPage + 1);
     };
+
+    useEffect(() => {
+        document.documentElement.style.setProperty('--items-count', visibleItems.length);
+    }, [visibleItems]);
 
   return (
     <div className='new-collections'>

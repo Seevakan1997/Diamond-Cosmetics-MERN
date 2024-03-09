@@ -1,27 +1,49 @@
-
-.popular{
+.popular {
     display: flex;
     margin-top: 40px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     height: 90vh;
-
 }
-.popular h1{
+
+.popular h1 {
     color: #171717;
     font-size: 30px;
-
 }
-.popular hr{
+
+.popular hr {
     width: 200px;
     height: 1px;
     border-radius: 10px;
     background: #252525;
 }
-.popular-item{
+
+.popular-item {
     margin-top: 40px;
     display: flex;
     gap: 30px;
     min-width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    .popular {
+        height: auto;
+    }
+
+    .popular-item {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular hr {
+        width: 150px;
+    }
+
+    .popular-item {
+        gap: 15px;
+        min-width: auto;
+    }
 }

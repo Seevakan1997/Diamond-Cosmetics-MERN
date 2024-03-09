@@ -47,3 +47,29 @@
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+
+@media screen and (max-width: 768px) {
+    .collections {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+    }
+    .new-collections {
+        margin-bottom: 1300px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .collections {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    .pagination {
+        margin-top: 100px;
+    }
+    .new-collections {
+        margin-bottom: calc(2000px + (var(--items-count) * 100px));
+    }
+}

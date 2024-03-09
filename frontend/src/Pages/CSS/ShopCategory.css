@@ -47,3 +47,37 @@
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+@media screen and (max-width: 768px) {
+    .shopCategory-indexShot {
+        margin: 20px 50px;
+    }
+
+    .shopCategory-products {
+        margin: 20px 50px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pagination {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .shopCategory-banner {
+        width: 100%;
+    }
+
+    .shopCategory-indexShot {
+        margin: 0px 5px;
+    }
+
+    .shopCategory-products {
+        margin: 20px 40px;
+        grid-template-columns: 1fr;
+    }
+
+    .pagination {
+        margin-top: 10px;
+    }
+}
