@@ -16,9 +16,9 @@ import { Link } from 'react-router-dom'
      </div>
      <ul className='nav-menu'>
         <li onClick={()=>setMenu("shop")}><Link style={{textDecoration:'none'}} to='/'>Shop</Link> {menu === "shop" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("men")}><Link style={{textDecoration:'none'}} to='/men'>Men</Link> {menu === "men" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("women")}><Link style={{textDecoration:'none'}} to='/women'>Women</Link> {menu === "women" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("kids")}><Link style={{textDecoration:'none'}} to='/kids'>Kids</Link> {menu === "kids" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("face")}><Link style={{textDecoration:'none'}} to='/face'>Face</Link> {menu === "face" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("body")}><Link style={{textDecoration:'none'}} to='/body'>Body</Link> {menu === "body" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("hair")}><Link style={{textDecoration:'none'}} to='/hair'>Hair</Link> {menu === "hair" ? <hr/>:<></>}</li>
      </ul>
      <div className='nav-login-cart'>
         <Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>
