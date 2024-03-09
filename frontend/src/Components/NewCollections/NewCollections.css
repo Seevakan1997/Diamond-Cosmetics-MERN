@@ -5,6 +5,7 @@
     align-items: center;
     gap: 10px;
     height: 90vh;
+    margin-bottom: 550px;
 }
 
 .new-collections h1 {
@@ -24,10 +25,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 40px;
     gap: 30px;
+    row-gap: 80px;
 }
 
 .pagination {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .pagination button {

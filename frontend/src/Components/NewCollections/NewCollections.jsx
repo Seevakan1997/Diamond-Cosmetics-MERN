@@ -27,7 +27,7 @@ import Item from '../Item/Item'
         <hr/>
         <div className='collections'>
             {visibleItems.map((item,i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+                return <Item key={i} id={item.id} name={item.name} image={item.image} price={item.new_price} category={item.category}/>
             })}
         </div>
         {totalPages > 1 && (
