@@ -19,6 +19,20 @@ const ListProduct = () => {
         fetchInfo();
     },[])
 
+    const remove_product = async (id)=>{
+        await fetch('http://localhost:4000/removeproduct',{
+            method:'POST',
+            headers:{
+                Accept:'application/json',
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({id:id}),
+        })
+        await fetchInfo();
+    }
+
+    
+
   return (
     <div className='list-product'>
       <h1>All products List</h1>
@@ -43,7 +57,7 @@ const ListProduct = () => {
                 {/* <p>{product.description}</p>
                 <p>{product.directions}</p> */}
                 <img src={edit_icon} alt='' className='listproduct-edit-icon'/>
-                <img src={cross_icon} alt='' className='listproduct-remove-icon'/>
+                <img onClick={()=>{remove_product(product.id)}} src={cross_icon} alt='' className='listproduct-remove-icon'/>
             </div>
             <hr/>
             </>
