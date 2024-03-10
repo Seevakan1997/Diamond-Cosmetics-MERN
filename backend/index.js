@@ -23,8 +23,13 @@ app.get("/",(req,res)=>{
 // Image storage
 
 const storage = multer.diskStorage({
-    destination:'./upload/images'
+    destination:'./upload/images',
+    filename:(req,file,cb)=>{
+        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
 })
+
+const upload = multer({})
 
 app.listen(port,(error)=>{
     if(!error){
