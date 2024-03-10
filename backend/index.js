@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({})
+const upload = multer({storage:storage})
 
 app.listen(port,(error)=>{
     if(!error){
