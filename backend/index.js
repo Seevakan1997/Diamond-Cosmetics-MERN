@@ -127,6 +127,121 @@ app.get('/allproducts',async(req,res)=>{
     res.send(products);
 })
 
+// API for editing a product
+app.post('/editproduct', async (req, res) => {
+    try {
+        const updatedProduct = {
+            name: req.body.name,
+            image: req.body.image,
+            category: req.body.category,
+            price: req.body.price,
+            description: req.body.description,
+            directions: req.body.directions,
+            in_stock: req.body.in_stock,
+        };
+
+        const productId = req.body.id;
+
+        const editedProduct = await Product.findOneAndUpdate(
+            { id: productId },
+            { $set: updatedProduct },
+            { new: true }
+        );
+
+        console.log("Product edited:", editedProduct);
+
+        res.json({
+            success: true,
+            editedProduct,
+        });
+    } catch (error) {
+        console.error("Error editing product:", error);
+        res.status(500).json({
+            success: false,
+            message: "Error editing product",
+        });
+    }
+});
+
+// Schema for User model
+
+    const Users = mongoose.model('Users',{
+        name:{
+            type:String,
+        },
+        email:{
+            type:String,
+            unique:true
+        },
+        password:{
+            type:String,
+        },
+        cartData:{
+            type:Object,
+        },
+        date:{
+            type:Date,
+            default:Date.now,
+        },
+    })
+
+    // create endpoint for registering the user
+    app.post('/signup',async(req,res)=>{
+        let check = await Users.findOne({email:req.body.email});
+        if(check){
+            return res.status(400).json({success:false,error:"This email already exist!"})
+        }
+        let cart = {};
+        for(let i = 0; i < 300; i++ ){
+            cart[i]=0;
+        }
+
+        const user = new Users({
+            name:req.body.username,
+            email:req.body.email,
+            password:req.body.password,
+            cartData:cart,
+        })
+
+        await user.save();
+
+        const data ={
+            user:{
+                id:user.id,
+            }
+        }
+
+        const token = jwt.sign(data,'secret_ecom');
+        res.json({success:true,token})
+
+    })
+
+    // create endpoint for user login
+
+    app.post('/login',async(req,res)=>{
+        let user = await Users.findOne({email:req.body.email});
+        if(user){
+            const passCompare = req.body.password === user.password;
+            if(passCompare){
+                const data = {
+                    user:{
+                        id:user.id,
+                    }
+                }
+                const token = jwt.sign(data,'secret_ecom');
+                res.json({success:true,token})
+
+            }
+            else{
+                res.json({success:false,errors:"Wrong Password"});
+            }
+        }
+        else{
+            res.json({success:false,errors:"Wrong Email Id"})
+        }
+    })
+
+
 app.listen(port,(error)=>{
     if(!error){
         console.log("Server is Running on port " +port);
