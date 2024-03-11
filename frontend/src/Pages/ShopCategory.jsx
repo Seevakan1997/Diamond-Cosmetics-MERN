@@ -44,7 +44,7 @@ const ITEMS_PER_PAGE = 12;
       </div>
       <div className='shopCategory-products'>
         {visibleProducts.map((item, i) => (
-          <Item key={i} id={item.id} name={item.name} image={item.image} price={item.new_price} category={item.category}/>
+          <Item key={i} id={item.id} name={item.name} image={item.image} price={item.price} category={item.category}/>
         ))}
       </div>
       {totalPages > 1 && (

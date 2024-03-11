@@ -27,7 +27,7 @@ import { ShopContext } from '../../Context/ShopContext'
             </div>
             
             <div className='productdisplay-right-details'>
-                <div className='productdisplay-price'>Rs.{product.new_price}</div>
+                <div className='productdisplay-price'>Rs.{product.price}</div>
             </div>
             <div className='productdisplay-description'>
             Load your lips with long lasting and impeccable red colour to fulfill your makeup requirements.

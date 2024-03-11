@@ -10,7 +10,7 @@ import Item from '../Item/Item'
         <hr/>
         <div className='relatedproducts-item'>
             {data_product.map((item,i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} price={item.new_price} category={item.category}/>
+                return <Item key={i} id={item.id} name={item.name} image={item.image} price={item.price} category={item.category}/>
             })}
         </div>
     </div>

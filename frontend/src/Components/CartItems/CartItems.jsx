@@ -23,9 +23,9 @@ import remove_icon from '../Assets/cart_cross_icon.png'
                             <div className='cartitems-format cartitems-format-main'>
                                 <img src={e.image} alt='' className='carticon-product-icon' />
                                 <p>{e.name}</p>
-                                <p>Rs.{e.new_price}</p>
+                                <p>Rs.{e.price}</p>
                                 <button className='cartitems-quantity'>{cartItems[e.id]}</button>
-                                <p>Rs.{e.new_price*cartItems[e.id]}</p>
+                                <p>Rs.{e.price*cartItems[e.id]}</p>
                                 <img className='cartitems-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt=''/>
                             </div>
                             <hr/>
