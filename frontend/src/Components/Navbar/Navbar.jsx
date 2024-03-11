@@ -25,13 +25,15 @@ import nav_dropdown from '../Assets/nav_dropdown.png'
      </div>
      <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt=''/>
      <ul ref={menuRef} className='nav-menu'>
-        <li onClick={()=>setMenu("shop")}><Link style={{textDecoration:'none'}} to='/'>Shop</Link> {menu === "shop" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("face")}><Link style={{textDecoration:'none'}} to='/face'>Face</Link> {menu === "face" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("body")}><Link style={{textDecoration:'none'}} to='/body'>Body</Link> {menu === "body" ? <hr/>:<></>}</li>
-        <li onClick={()=>setMenu("hair")}><Link style={{textDecoration:'none'}} to='/hair'>Hair</Link> {menu === "hair" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("shop")}><Link style={{textDecoration:'none',color:'black'}} to='/'>Shop</Link> {menu === "shop" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("face")}><Link style={{textDecoration:'none',color:'black'}} to='/face'>Face</Link> {menu === "face" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("body")}><Link style={{textDecoration:'none',color:'black'}} to='/body'>Body</Link> {menu === "body" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("hair")}><Link style={{textDecoration:'none',color:'black'}} to='/hair'>Hair</Link> {menu === "hair" ? <hr/>:<></>}</li>
      </ul>
      <div className='nav-login-cart'>
-        <Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>
+     {localStorage.getItem('auth-token')
+     ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:<Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>
+     }
         <Link style={{textDecoration:'none'}} to='/cart'><img src={cart_icon} alt=''/></Link>
         <div className='nav-cart-count'>{getTotalCartItems()}</div>
      </div>

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
         <p>{props.name}</p>
         <div className='item-price-quantity'>
             <div className='item-price'>
-                {props.price}
+                Rs.{props.price}
             </div>
             <div className='item-category'>
                 {props.category}
