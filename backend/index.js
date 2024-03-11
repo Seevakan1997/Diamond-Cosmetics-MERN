@@ -244,10 +244,10 @@ app.post('/editproduct', async (req, res) => {
     //creating endpoint for new collections 
 
     app.get('/newcollection',async(req,res)=>{
-        let products = await Product.find({});
-        let newcollection = products.slice(1).slice(-8);
+        let products = await Product.find({}).sort({ date: -1 });
+        // let newcollection = products.slice(1).slice(-8);
         console.log("New Collections Fetched");
-        res.send(newcollection);
+        res.send(products);
     })
 
     // creating endpoint for popular items

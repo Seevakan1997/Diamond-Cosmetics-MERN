@@ -29,6 +29,7 @@ import nav_dropdown from '../Assets/nav_dropdown.png'
         <li onClick={()=>setMenu("face")}><Link style={{textDecoration:'none',color:'black'}} to='/face'>Face</Link> {menu === "face" ? <hr/>:<></>}</li>
         <li onClick={()=>setMenu("body")}><Link style={{textDecoration:'none',color:'black'}} to='/body'>Body</Link> {menu === "body" ? <hr/>:<></>}</li>
         <li onClick={()=>setMenu("hair")}><Link style={{textDecoration:'none',color:'black'}} to='/hair'>Hair</Link> {menu === "hair" ? <hr/>:<></>}</li>
+        <li onClick={()=>setMenu("lips")}><Link style={{textDecoration:'none',color:'black'}} to='/lips'>Lips</Link> {menu === "lips" ? <hr/>:<></>}</li>
      </ul>
      <div className='nav-login-cart'>
      {localStorage.getItem('auth-token')

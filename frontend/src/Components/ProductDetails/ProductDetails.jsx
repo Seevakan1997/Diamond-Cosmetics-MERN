@@ -34,14 +34,11 @@ import { ShopContext } from '../../Context/ShopContext'
                 <div className='productdisplay-price'>Rs.{product.price}</div>
             </div>
             <div className='productdisplay-description'>
-            Load your lips with long lasting and impeccable red colour to fulfill your makeup requirements.
+            {product.description}
             </div>
             <h2>How To Use:</h2>
             <div className='productdisplay-usage'>
-            1. Exfoliate your lips.
-            2. Line your lips with the CCUK Lip definer, then fill them in.
-            3. Blot your lips for an extra-matte finish.
-            *Please note that actual colours may
+            {product.directions}
             </div>
             <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
             

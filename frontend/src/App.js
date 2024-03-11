@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import offer_banner1 from './Components/Assets/banner1.png';
 import offer_banner2 from './Components/Assets/banner2.png';
 import offer_banner3 from './Components/Assets/banner3.png';
+import offer_banner4 from './Components/Assets/banner4.png';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/face' element={<ShopCategory banner={offer_banner1} category="face"/>}/>
         <Route path='/body' element={<ShopCategory banner={offer_banner2} category="body"/>}/>
         <Route path='/hair' element={<ShopCategory banner={offer_banner3} category="hair"/>}/>
+        <Route path='/lips' element={<ShopCategory banner={offer_banner4} category="lips"/>}/>
         <Route path='/product' element={<Product/>}>
           <Route path=':productId' element={<Product/>}/>
         </Route>
