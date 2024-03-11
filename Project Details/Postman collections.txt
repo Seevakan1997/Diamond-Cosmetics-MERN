@@ -1,0 +1,13 @@
+
+login (POST): http://localhost:4000/login
+signup (POST): http://localhost:4000/signup
+imgupload (POST): http://localhost:4000/upload
+addproduct (POST): http://localhost:4000/addproduct
+getallproducts (GET): http://localhost:4000/allproducts
+updateproduct (POST): http://localhost:4000/editproduct
+deleteproduct (POST): http://localhost:4000/removeproduct
+getnewCollections (GET): http://localhost:4000/newcollection
+popularinItems (GET): http://localhost:4000/popularitems
+addtocart (POST): http://localhost:4000/addtocart
+deletefromcart (POST): http://localhost:4000/removefromcart
+getCart (POST): http://localhost:4000/getcart

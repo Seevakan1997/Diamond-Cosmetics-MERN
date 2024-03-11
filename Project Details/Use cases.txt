@@ -1,0 +1,43 @@
+
+1.Customer Use Cases:
+
+Functional:
+
+    1. Browse Products: A customer can browse all available products on the shop page (homepage) or filter them by category using the navigation bar. (Here uses GET requests to the backend APIs).
+
+    2. View Product Details: A customer can click on a product to view its detailed information, including description, images, and price. (Here uses a GET request to the backend API for the specific product).
+
+    3. Add Product to Cart: A customer can add a product to their shopping cart for future purchase. (Here uses a POST request to the backend "addtocart" API).
+
+    4. Remove Product from Cart: A customer can remove a product from their shopping cart. (Here uses a POST request to the backend "removefromcart" API).
+
+    5. View Cart Items: A customer can view the contents of their shopping cart, including product details, quantity, and total price. (Here uses a POST request to the backend "getcart" API).
+
+    6. Login/Signup: A customer can create a new account or login to an existing account for functionalities like managing their cart or add product to cart. (This uses POST requests to the backend "login" and "signup" APIs).
+
+    7. Login and Authentication: A customer can log in to the website using their username and password. Upon successful login, the backend generates a JWT token and sends it back to the customer's browser. This token is then stored in the browser's local storage or cookies. (Here uses a POST request to the backend "login" API).
+
+    8. Logout: The customer can log out of the website, and the JWT token is either removed from the browser storage or invalidated on the backend. (Here could involve a POST request to the backend "logout" API or simply removing the token from storage)
+
+Non-Functional:    
+
+    1. Product Listing Performance: The product listing page should load quickly and display products efficiently.
+
+    2. Mobile Responsiveness: The website should be responsive and display well on different devices (desktop, mobile, tablet).
+
+
+2.Admin Use Cases:
+
+Functional:
+
+    1. Product Management: An admin can add, edit, and delete products from the backend. (This uses POST requests for "addproduct", "editproduct", and "deleteproduct" APIs).
+
+    2. Image Upload: An admin can upload product images during product creation. (This uses a POST request to the backend "upload" API).
+
+    3. View All Products: An admin can view a list of all available products in the system. (This uses a GET request to the backend "allproducts" API).
+
+Non-Functional:
+
+    1. Secure Login: The admin panel should have secure login procedures with proper authentication.
+
+    2. Data Security: User and product data stored in the backend should be secure.
