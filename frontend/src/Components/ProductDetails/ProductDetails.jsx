@@ -8,6 +8,10 @@ import { ShopContext } from '../../Context/ShopContext'
     const {product} = props;
     const {addToCart}= useContext(ShopContext);
 
+    if (!product) {
+        return <div>Loading...</div>;
+    }
+
   return (
     <div className='productdisplay'>
         <div className='productdisplay-left'>

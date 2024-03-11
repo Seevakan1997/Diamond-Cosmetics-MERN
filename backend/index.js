@@ -259,6 +259,15 @@ app.post('/editproduct', async (req, res) => {
         res.send(popular_items);
     })
 
+    // creating endpoint for related items
+
+    app.get('/relatedproducts',async(req,res)=>{
+        let products = await Product.find({});
+        let related_items = products.slice(0,4);
+        console.log("Related items Fetched");
+        res.send(related_items);
+    })
+
     // creating middleware to fetch user
 
     const fetchUser = async(req,res,next)=>{
