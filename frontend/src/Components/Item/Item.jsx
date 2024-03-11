@@ -6,14 +6,12 @@ import { Link } from 'react-router-dom'
   return (
     <div className='item'>
             <Link to={`/product/${props.id}`}><img onClick={window.scrollTo(0,0)} className='product_image' src={props.image} alt=''/></Link>
-        <p>{props.name}</p>
+        <p>{props.name} <span>({props.category})</span></p>
         <div className='item-price-quantity'>
             <div className='item-price'>
                 Rs.{props.price}
             </div>
-            <div className='item-category'>
-                {props.category}
-            </div>
+            
         </div>
     </div>
   )
